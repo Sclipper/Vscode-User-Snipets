@@ -1,0 +1,137 @@
+{
+    // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+    // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+    // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+    // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+    // Placeholders with the same ids are connected.
+    // Example:
+    // "Print to console": {
+    //     "scope": "javascript,typescript",
+    //     "prefix": "log",
+    //     "body": [
+    //         "console.log('$1');",
+    //         "$2"
+    //     ],
+    //     "description": "Log output to console"
+    // }
+    "stateless": {
+        "prefix": "scomponent",
+        "body": [
+            "import React from 'react'",
+            "",
+            "const ${1:} = () => {",
+                "",
+                "  return (",
+                "    <div> </div>",
+                "  )",
+                "",
+                "}",
+                "",
+                "export default ${1:}"
+        ],
+        "description": "Creates stateless react component"
+    },
+    "effect": {
+        "prefix": "seffect",
+        "body": [
+            "React.useEffect(() => {",
+                "",
+                "}, [${1:}])",
+        ],
+        "description": "React useEffect"
+    },
+    "state": {
+        "prefix": "sstate",
+        "body": [
+            "const [${1:var}, ${2:var}] = React.useState('${3:}')"
+        ],
+        "description": "React useState"
+    },
+    "map": {
+        "prefix": "smap",
+        "body": [
+            "${1:var}.map(${2:x} => {",
+                "",
+            "}"
+        ],
+    },
+    "default import": {
+        "prefix": "simportd",
+        "body": [
+            "import ${1:component} from '${2:component}'",
+        ],
+    },
+    "named import": {
+        "prefix": "simportn",
+        "body": [
+            "import { ${1:component}, } from '${2:component}'",
+        ],
+    },
+    "HMTL element": {
+        "prefix": "shtml",
+        "body": [
+            "<${1:element}> </${1:element}>",
+        ],
+    },
+    "Material ui element": {
+        "prefix": "smaterial",
+        "body": [
+            "<${1:element} className={${2:''}} />",
+        ],
+    },
+    "Stateless Function": {
+        "prefix": "sfunction",
+        "body": [
+            "const ${1:functionName} = (${2:}) => {",
+            "",
+            "}"
+        ],
+    },
+    "Hover Propperty To Component": {
+        "prefix": "spointer, shover",
+        "body": [
+            "'&:hover': {",
+                "  cursor: 'pointer',",
+              "},"
+        ]
+    },
+    "Add props to component": {
+        "prefix": "sprops",
+        "body": "const { ${1:} } = props "
+    },
+    "Add styles": {
+        "prefix": "smakeStyles",
+        "body": [
+            "const useStyles = makeStyles(theme => ({",
+            "",
+            "}))"
+        ]
+    },
+    "Media Querry": {
+        "prefix": "smedia",
+        "body": [
+            "'@media screen and (max-width: 600px)': {",
+            "",
+            "}"
+        ]
+    },
+    "Console Log": {
+        "prefix": "slog",
+        "body": "console.log(${1:})",
+    },
+    "Connect": {
+        "prefix": "sconnect",
+        "body": [
+            "const mapStateToProps = state => ({",
+                "// localVatiableName: state.path.to.redux.state,",
+            "})",
+              "",
+              "const mapDispatchToProps = dispatch => ({",
+                "// localName: (value) => dispatch(setNameInRedux(value)),",
+              "})",
+              "",
+              "export default connect(mapStateToProps, mapDispatchToProps)(${1:})",
+        ]
+    }
+}

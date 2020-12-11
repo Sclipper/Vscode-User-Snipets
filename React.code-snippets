@@ -36,15 +36,14 @@
         "prefix": "sfullcomponent",
         "body": [
             "// @flow",
-            "import React from 'react'",
-            "import { makeStyles } from '@material-ui/core/styles'",
+            "import * as React from 'react'",
             "",
-            "import { Theme } from '@material-ui/core'",
+            "import { makeStyles } from '@material-ui/core'",
             "",
             "import { FormattedMessage } from 'react-intl'",
             "import intl from 'risika/localization/components'",
             "",
-            "const useStyles = makeStyles((theme: Theme) => ({",
+            "const useStyles = makeStyles((theme) => ({",
             "",
             "}))",
             "",
@@ -195,7 +194,8 @@
     "importMaterialIcons": {
         "prefix": "sicons",
         "body": [
-            "import { ${1:} } from '@material-ui/icons'",
+            "import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'",
+            "import { faChevron${1:} } from '@fortawesome/free-solid-svg-icons'",
         ]
     },
     "importMaterialStyles": {
@@ -273,7 +273,7 @@
             "var1: {},",
             "}",
             "",
-            "export const creditCheck = (",
+            "export const reducerName = (",
             "state: ComponentInitialState = initialState,",
             "action: Action = { type: '' },",
             ") => {",
@@ -285,7 +285,7 @@
             "}",
             "}",
             "",
-            "export default creditCheck",
+            "export default reducerName",
         ]
     },
     "Saga redux": {
@@ -354,6 +354,18 @@
             "status: 'SUCCESS',",
             " }",
             "}"
+        ]
+    },
+    "Get statement cypress": {
+        "prefix": "sget",
+        "body": [
+            "cy.get('[data-cy=\"${1:}\"]')",
+        ]
+    },
+    "set cypress id": {
+        "prefix": "scid",
+        "body": [
+            "data-cy=\"${1:}\""
         ]
     },
 }

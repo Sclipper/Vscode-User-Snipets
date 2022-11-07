@@ -18,47 +18,22 @@
     "stateless": {
         "prefix": "scomponent",
         "body": [
-            "import React from 'react'",
-            "",
-            "const ${1:} = () => {",
-            "const classes = useStyles()",
-            "  return (",
-            "    <div> </div>",
-            "  )",
-            "",
-            "}",
-            "",
-            "export default ${1:}"
-        ],
-        "description": "Creates stateless react component"
-    },
-    "withStyles": {
-        "prefix": "sfullcomponent",
-        "body": [
-            "// @flow",
-            "import * as React from 'react'",
-            "",
-            "import { makeStyles } from '@material-ui/core'",
-            "",
-            "import { FormattedMessage } from 'react-intl'",
-            "import intl from 'risika/localization/components'",
-            "",
-            "const useStyles = makeStyles((theme) => ({",
-            "",
-            "}))",
-            "",
             "type Props = {",
-            "",
+"",
             "}",
-            "const ${1:} = ({ ${2:} }: Props) => {",
-            "const classes = useStyles()",
-            "  return (",
-            "    <div> </div>",
-            "  )",
-            "",
+           " ",
+            "function ${1:ComponentName}({ }: Props) {",
+                "return (",
+                    "<div> ",
+                        "<p>",
+                            "Hello",
+                        "</p>",
+                    "</div>",
+                ")",
+           " ",
             "}",
-            "",
-            "export default ${1:}"
+           " ",
+            "export default ${1:ComponentName}",
         ],
         "description": "Creates stateless react component"
     },
@@ -86,28 +61,11 @@
             "}"
         ],
     },
-    "default import": {
-        "prefix": "simportd",
-        "body": [
-            "import ${1:component} from '${2:component}'",
-        ],
-    },
-    "named import": {
-        "prefix": "simportn",
-        "body": [
-            "import { ${1:component}, } from '${2:component}'",
-        ],
-    },
+
     "HMTL element": {
         "prefix": "shtml",
         "body": [
             "<${1:element}> </${1:element}>",
-        ],
-    },
-    "Material ui element": {
-        "prefix": "smaterial",
-        "body": [
-            "<${1:element} className={${2:''}} />",
         ],
     },
     "Stateless Function": {
@@ -124,18 +82,6 @@
             "'&:hover': {",
             "  cursor: 'pointer',",
             "},"
-        ]
-    },
-    "Add props to component": {
-        "prefix": "sprops",
-        "body": "const { ${1:} } = props "
-    },
-    "Add styles": {
-        "prefix": "smakeStyles",
-        "body": [
-            "const useStyles = makeStyles(theme => ({",
-            "",
-            "}))"
         ]
     },
     "Media Querry": {
@@ -156,53 +102,7 @@
     },
     "Console Log": {
         "prefix": "slog",
-        "body": "console.log(${1:})",
-    },
-    "Connect": {
-        "prefix": "sconnect",
-        "body": [
-            "const mapStateToProps = state => ({",
-            "// localVatiableName: state.path.to.redux.state,",
-            "})",
-            "",
-            "const mapDispatchToProps = dispatch => ({",
-            "// localName: (value) => dispatch(setNameInRedux(value)),",
-            "})",
-            "",
-            "export default connect(mapStateToProps, mapDispatchToProps)(${1:})",
-        ]
-    },
-    "Redux hooks": {
-        "prefix": "sredux",
-        "body": [
-            "const { variables } = useSelector(state => state.component.root)",
-            "const dispatch = useDispatch()",
-        ]
-    },
-    "Redux hooks import": {
-        "prefix": "sreduximport",
-        "body": [
-            "import { useSelector, useDispatch } from 'react-redux'",
-        ]
-    },
-    "importMaterialCore": {
-        "prefix": "score",
-        "body": [
-            "import { ${1:} } from '@material-ui/core'",
-        ]
-    },
-    "importMaterialIcons": {
-        "prefix": "sicons",
-        "body": [
-            "import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'",
-            "import { faChevron${1:} } from '@fortawesome/free-solid-svg-icons'",
-        ]
-    },
-    "importMaterialStyles": {
-        "prefix": "sstyles",
-        "body": [
-            "import { ${1:} } from '@material-ui/core/styles'",
-        ]
+        "body": "console.log('${1:}', ${1:})",
     },
     "string": {
         "prefix": "string",
@@ -234,128 +134,6 @@
             ".attr('${1:}', '${2:}')",
         ]
     },
-    "Constants redux": {
-        "prefix": "sconst",
-        "body": [
-            "import { DOMAIN as _ } from 'risika/configs'",
-            "",
-            "/**************",
-            "* Saga calls *",
-            "**************/",
-            "export const CONSTANT_1 = `${_} CONSTANT_1`",
-            "",
-            "/****************",
-            "* Action calls *",
-            "****************/",
-            "export const CONSTANT_2 = `${_} CONSTANT_2`",
-        ]
-    },
-    "Reducer redux": {
-        "prefix": "sreducer",
-        "body": [
-            "// @flow",
-            "import { type Action, AsyncAction } from 'risika/store/flow-typed'",
-            "import { CONSTANT_1 } from './constants'",
-            "",
-            "type ComponentInitialState = {",
-            "var1: type1,",
-            "}",
-            "",
-            "const handleSaveToState = (state, action) => {",
-            "const { payload } = action",
-            "return {",
-            "...state,",
-            "var1: payload.newValue,",
-            "}",
-            "}",
-            "",
-            "export const initialState: ComponentInitialState = {",
-            "var1: {},",
-            "}",
-            "",
-            "export const reducerName = (",
-            "state: ComponentInitialState = initialState,",
-            "action: Action = { type: '' },",
-            ") => {",
-            "switch (action.type) {",
-            "case CONSTANT_1:",
-            "return handleSaveToState(state, action)",
-            "default:",
-            "return state",
-            "}",
-            "}",
-            "",
-            "export default reducerName",
-        ]
-    },
-    "Saga redux": {
-        "prefix": "ssaga",
-        "body": [
-            "import { takeEvery, call, put, all } from 'redux-saga/effects'",
-            "import { apiCall1 } from 'risika/services/api'",
-            "",
-            "import { CONSTANT_1 } from './constants'",
-            "",
-            "import { action1Success, action1Failed } from './actions'",
-            "",
-            "/**********",
-            "* Watcher *",
-            "**********/",
-            "export function* someComponentSaga() {",
-            "yield takeEvery(CONSTANT_1, fetchSomeData)",
-            "}",
-            "",
-            "/**********",
-            "* Worker *",
-            "**********/",
-            "function* fetchSomeData({ payload }) {",
-            "const { var1 } = payload",
-            "try {",
-            "const result = yield call(apiCall1, var1)",
-            "yield put(action1Success(result))",
-            "} catch (error) {",
-            "yield put(action1Failed())",
-            "}",
-            "}",
-        ]
-    },
-    "Action Redux": {
-        "prefix": "saction",
-        "body": [
-            "// @flow",
-            "import { type AsyncAction } from 'risika/store/flow-typed'",
-            "import { CONSTANT_NAME_1, CONSTANT_NAME_2 } from './constants'",
-            "",
-            "type dataTypeProp1 = {",
-            "prop1: someCoolType,",
-            "}",
-            "",
-            "/**************",
-            "* Saga calls *",
-            "**************/",
-            "export const submitFetchSomeData = ({",
-            "prop1,",
-            "}: dataTypeProp1): AsyncAction<dataTypeProp1> => {",
-            "return {",
-            "type: CONSTANT_NAME_1,",
-            "payload: { prop1 },",
-            "status: 'LOADING',",
-            "}",
-            "}",
-            "",
-            "/*****************",
-            "* Reducer calls *",
-            "*****************/",
-            "",
-            "export const storeSomeData = (data: dataTypes): AsyncAction<dataTypes> => {",
-            "return {",
-            "type: CONSTANT_NAME_2,",
-            "payload: data,",
-            "status: 'SUCCESS',",
-            " }",
-            "}"
-        ]
-    },
     "Get statement cypress": {
         "prefix": "sget",
         "body": [
@@ -363,9 +141,75 @@
         ]
     },
     "set cypress id": {
-        "prefix": "scid",
+        "prefix": "scy",
         "body": [
             "data-cy=\"${1:}\""
+        ]
+    },
+    "crete-context-boilerplate": {
+        "prefix": "scontext",
+        "body": [
+            "import * as React from 'react'",
+"",
+"/**",
+ "* 1. Write the name of the context Provider starting with a capital letter ",
+ "* 2. Press Tab",
+ "* 3. Write the name of the reducer (usually the name of the provider, but with lowercase first letter)",
+ "* 4. Delete this comment",
+ "*/",
+            "type case1Payload = {",
+              "var1: number",
+            "}",
+            "type Action = {type: 'case1', payload: case1Payload} | {type: 'case2'}",
+            "type Dispatch = (action: Action) => void",
+            "type State = {var1: number}",
+            "type ${1:Generic}ProviderProps = {children: React.ReactNode}",
+           " ",
+            "const ${1:Generic}StateContext = React.createContext<",
+              "{state: State; dispatch: Dispatch} | undefined",
+            ">(undefined)",
+           " ",
+            "function ${2:generic}Reducer(state: State, action: Action) {",
+              "switch (action.type) {",
+                "case 'case1': {",
+                  "return {",
+                    "...state,",
+                    "var1: action.payload.var1",
+                  "}",
+                "}",
+                "default: {",
+                  "throw new Error(`Unhandled action type: ${action.type}`)",
+                "}",
+              "}",
+            "}",
+           " ",
+           " ",
+            "const defaultState = {",
+              "var1: 0",
+            "}",
+           " ",
+           " ",
+            "function ${1:Generic}Provider({children}: ${1:Generic}ProviderProps) {",
+              "const [state, dispatch] = React.useReducer(${2:generic}Reducer, defaultState)",
+              "// NOTE: you *might* need to memoize this value",
+             " ",
+              "const value = {state, dispatch}",
+              "return (",
+                "<${1:Generic}StateContext.Provider value={value}>",
+                  "{children}",
+                "</${1:Generic}StateContext.Provider>",
+              ")",
+            "}",
+           " ",
+            "function use${1:Generic}() {",
+              "const context = React.useContext(${1:Generic}StateContext)",
+              "if (context === undefined) {",
+                "throw new Error('use${1:Generic} must be used within a ${1:Generic}Provider')",
+              "}",
+              "return context",
+            "}",
+           " ",
+            "export {${1:Generic}Provider, use${1:}}",
         ]
     },
 }

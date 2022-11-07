@@ -18,11 +18,11 @@
     "stateless": {
         "prefix": "scomponent",
         "body": [
-            "type Props = {",
+            "type ${1:ComponentName}Props = {",
 "",
             "}",
            " ",
-            "function ${1:ComponentName}({ }: Props) {",
+            "function ${1:ComponentName}({ }: ${1:ComponentName}Props) {",
                 "return (",
                     "<div> ",
                         "<p>",

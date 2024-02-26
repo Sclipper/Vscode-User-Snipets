@@ -1,357 +1,487 @@
 {
-    // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
-    // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
-    // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
-    // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
-    // Placeholders with the same ids are connected.
-    // Example:
-    // "Print to console": {
-    //     "scope": "javascript,typescript",
-    //     "prefix": "log",
-    //     "body": [
-    //         "console.log('$1');",
-    //         "$2"
-    //     ],
-    //     "description": "Log output to console"
-    // }
-    "stateless": {
-        "prefix": "scomponent",
-        "body": [
-            "type ${1:ComponentName}Props = {",
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	//     "scope": "javascript,typescript",
+	//     "prefix": "log",
+	//     "body": [
+	//         "console.log('$1');",
+	//         "$2"
+	//     ],
+	//     "description": "Log output to console"
+	// }
+	"stateless": {
+			"prefix": "scomponent",
+			"body": [
+					"type ${1:ComponentName}Props = {",
 "",
-            "}",
-           " ",
-            "function ${1:ComponentName}({ }: ${1:ComponentName}Props) {",
-                "return (",
-                    "<div> ",
-                        "<p>",
-                            "Hello",
-                        "</p>",
-                    "</div>",
-                ")",
-           " ",
-            "}",
-           " ",
-            "export default ${1:ComponentName}",
-        ],
-        "description": "Creates stateless react component"
-    },
-    "effect": {
-        "prefix": "seffect",
-        "body": [
-            "React.useEffect(() => {",
-            "",
-            "}, [${1:}])",
-        ],
-        "description": "React useEffect"
-    },
-    "state": {
-        "prefix": "sstate",
-        "body": [
-            "const [${1:var}, ${2:var}] = React.useState('${3:}')"
-        ],
-        "description": "React useState"
-    },
-    "map": {
-        "prefix": "smap",
-        "body": [
-            "${1:var}.map(${2:x} => {",
-            "",
-            "}"
-        ],
-    },
+					"}",
+				 " ",
+					"function ${1:ComponentName}({ }: ${1:ComponentName}Props) {",
+							"return (",
+									"<div> ",
+											"<p>",
+													"Hello",
+											"</p>",
+									"</div>",
+							")",
+				 " ",
+					"}",
+				 " ",
+					"export default ${1:ComponentName}",
+			],
+			"description": "Creates stateless react component"
+	},
+	"effect": {
+			"prefix": "seffect",
+			"body": [
+					"React.useEffect(() => {",
+					"",
+					"}, [${1:}])",
+			],
+			"description": "React useEffect"
+	},
+	"state": {
+			"prefix": "sstate",
+			"body": [
+					"const [${1:var}, ${2:var}] = React.useState('${3:}')"
+			],
+			"description": "React useState"
+	},
+	"map": {
+			"prefix": "smap",
+			"body": [
+					"${1:var}.map(${2:x} => {",
+					"",
+					"}"
+			],
+	},
 
-    "HMTL element": {
-        "prefix": "shtml",
-        "body": [
-            "<${1:element}> </${1:element}>",
-        ],
-    },
-    "Stateless Function": {
-        "prefix": "sfunction",
-        "body": [
-            "const ${1:functionName} = (${2:}) => {",
-            "",
-            "}"
-        ],
-    },
-    "Hover Propperty To Component": {
-        "prefix": "spointer, shover",
-        "body": [
-            "'&:hover': {",
-            "  cursor: 'pointer',",
-            "},"
-        ]
-    },
-    "Media Querry": {
-        "prefix": "smedia",
-        "body": [
-            "'@media screen and (max-width: 600px)': {",
-            "",
-            "}"
-        ]
-    },
-    "Media Thwmw Querry": {
-        "prefix": "smediatheme",
-        "body": [
-            "[theme.breakpoints.${1:up/down}('${2:xl: 1920, lg: 1280, md: 960, sm: 600, xs:0}')]: {",
-            "",
-            "}"
-        ]
-    },
-    "Console Log": {
-        "prefix": "slog",
-        "body": "console.log('${1:}', ${1:})",
-    },
-    "string": {
-        "prefix": "string",
-        "body": [
-            "string",
-        ]
-    },
-    "boolean": {
-        "prefix": "boolean",
-        "body": [
-            "boolean",
-        ]
-    },
-    "Synthetic event": {
-        "prefix": "SyntheticEvent",
-        "body": [
-            "SyntheticEvent<${1:}>",
-        ]
-    },
-    "Formatted message": {
-        "prefix": "sFormattedMessage",
-        "body": [
-            "<FormattedMessage id={intl.${2:}('${1:}')} />",
-        ]
-    },
-    "Attr d3": {
-        "prefix": "sattr",
-        "body": [
-            ".attr('${1:}', '${2:}')",
-        ]
-    },
-    "Get statement cypress": {
-        "prefix": "sget",
-        "body": [
-            "cy.get('[data-cy=\"${1:}\"]')",
-        ]
-    },
-    "set cypress id": {
-        "prefix": "scy",
-        "body": [
-            "data-cy=\"${1:}\""
-        ]
-    },
-    "create-styles-file": {
-        "prefix": "sstyles",
-        "body": [
-            "export const ${1:componentStyle} = {",
+	"HMTL element": {
+			"prefix": "shtml",
+			"body": [
+					"<${1:element}> </${1:element}>",
+			],
+	},
+	"Stateless Function": {
+			"prefix": "sfunction",
+			"body": [
+					"const ${1:functionName} = (${2:}) => {",
+					"",
+					"}"
+			],
+	},
+	"Hover Propperty To Component": {
+			"prefix": "spointer, shover",
+			"body": [
+					"'&:hover': {",
+					"  cursor: 'pointer',",
+					"},"
+			]
+	},
+	"Media Querry": {
+			"prefix": "smedia",
+			"body": [
+					"'@media screen and (max-width: 600px)': {",
+					"",
+					"}"
+			]
+	},
+	"Media Thwmw Querry": {
+			"prefix": "smediatheme",
+			"body": [
+					"[theme.breakpoints.${1:up/down}('${2:xl: 1920, lg: 1280, md: 960, sm: 600, xs:0}')]: {",
+					"",
+					"}"
+			]
+	},
+	"Console Log": {
+			"prefix": "slog",
+			"body": "console.log('${1:}', ${1:})",
+	},
+	"string": {
+			"prefix": "string",
+			"body": [
+					"string",
+			]
+	},
+	"boolean": {
+			"prefix": "boolean",
+			"body": [
+					"boolean",
+			]
+	},
+	"Synthetic event": {
+			"prefix": "SyntheticEvent",
+			"body": [
+					"SyntheticEvent<${1:}>",
+			]
+	},
+	"Formatted message": {
+			"prefix": "sFormattedMessage",
+			"body": [
+					"<FormattedMessage id={intl.${2:}('${1:}')} />",
+			]
+	},
+	"Attr d3": {
+			"prefix": "sattr",
+			"body": [
+					".attr('${1:}', '${2:}')",
+			]
+	},
+	"Get statement cypress": {
+			"prefix": "sget",
+			"body": [
+					"cy.get('[data-cy=\"${1:}\"]')",
+			]
+	},
+	"set cypress id": {
+			"prefix": "scy",
+			"body": [
+					"data-cy=\"${1:}\""
+			]
+	},
+	"create-styles-file": {
+			"prefix": "sstyles",
+			"body": [
+					"export const ${1:componentStyle} = {",
 "",
-              "}",
-              "",
-              "export const classes = {",
-                "${1:componentStyle},",
-              "}"              ,
-        ]
-    },
+						"}",
+						"",
+						"export const classes = {",
+							"${1:componentStyle},",
+						"}"              ,
+			]
+	},
 
-    "create-html": {
-        "prefix": "adfasdfs",
-        "body": [
-            "<!DOCTYPE html>",
-            "<html lang="en">",
-              "<head>",
-                "<meta charset="UTF-8">",
-                "<meta name="viewport" content="width=device-width, initial-scale=1.0">",
-                "<script src="https://kit.fontawesome.com/eadd39accc.js" crossorigin="anonymous"></script>",
-                "<link rel="preconnect" href="https://fonts.googleapis.com">",
-                "<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>",
-                "<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">",
-                "<link href="https://fonts.googleapis.com/css2?family=Golos+Text&display=swap" rel="stylesheet">",
-                "<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">",
-                "<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet"><meta http-equiv="X-UA-Compatible" content="ie=edge">",
-                "<script src = "https://code.jquery.com/jquery-3.5.0.js"></script>",
-                "<title>Italy</title>",
-                "<link rel="stylesheet" href="./Italy.css">",
-              "</head>",
-              "<body>",
-                "<nav class="navbar">",
-                    "<ul class="navList">",
-                        "<li class="navText">",
-                          "<a href="index.html" class="homeButton">Home</a>",
-                          "<a href="index.html" class="homeButton">About</a>",
-                          "<a href="index.html" class="homeButton">Contact Us</a> ",
-                        "</li>",
-                    "</ul>",
-                "</nav>",
-                "<div class="main">",
-                    "<div class="titleDescription">",
-                        "<h1 class="pageTitle">About Italy</h1>",
-                        "<div class="overview">",
-                            "<p>Italy truly has something for everyone! With its stunning art, architecture, and fashion, mouth-watering food, world-renowned wine, and picturesque landscapes, this country is a must-see destination.</p>",
-                          "<br>",
-                              "<p>Experience the history and culture of Italy by strolling through ancient ruins, admiring breathtaking art, or exploring charming towns and cities. And when it comes to food, Italian cuisine is second to none, from classic dishes like pizza and pasta to regional specialties that will tantalize your taste buds.</p> ",
-                              "<br>",
-                              "<p>But Italy is not just about its cities and food. The country is home to diverse landscapes, including the rolling hills of Tuscany, the rugged coastlines of the Amalfi Coast, and the majestic peaks of the Italian Alps.</p>",
-                              "<br>",
-                              "<p>warm hospitality and a welcoming spirit, Italy is a place that will capture your heart and leave you wanting more. So why wait? Book your trip to Italy today and experience the magic for yourself!</p>",
-                              "<img src="images/Italy_Flag.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem; margin-top: 3rem;">",
-                        "</div>",
-                        "<h1 class="pageTitle">Popular cities for tourists</h1>",
-                        "<div class="landmarks">",
-                            "<ol style="font-size: 50rem;">",
-                              "<li class="landmark">",
-                                "<h2>Rome</h2>",
-                                "<p style="margin-top: 2rem; margin-bottom: 3rem;">Italy's capital city is a popular destination for tourists due to its rich history, stunning architecture, and world-renowned landmarks such as the Colosseum, the Vatican City, and the Trevi Fountain.</p>",
-                                "<img src="images/Rome.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem;">",
-                              "</li>",
-                              "<li class="landmark">",
-                                "<h2>Venice</h2>",
-                                "<p style="margin-top: 2rem; margin-bottom: 3rem;">Known as the "City of Canals," Venice is famous for its beautiful waterways, gondolas, and stunning architecture. Tourists come to Venice to explore its numerous museums, galleries, and historic buildings.</p>",
-                                "<img src="images/Venice.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem;">",
-                              "</li>",
-                              "<li class="landmark">",
-                                "<h2>Florence</h2>",
-                                "<p style="margin-top: 2rem; margin-bottom: 3rem;">This city is renowned for its art, architecture, and cultural heritage. Florence is home to some of the world's most famous art museums, including the Uffizi Gallery and the Accademia Gallery, which houses Michelangelo's David sculpture.</p>",
-                                "<img src="images/Florence.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem;">",
-                              "</li>",
-                              "<li class="landmark">",
-                                "<h2>Milan</h2>",
-                                "<p style="margin-top: 2rem; margin-bottom: 3rem;">Known as the fashion capital of Italy, Milan is a popular destination for fashionistas and design enthusiasts. Visitors can explore the city's museums, galleries, and shops, as well as its iconic landmarks such as the Gothic-style Milan Cathedral.</p>",
-                                "<img src="images/Milan.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem;">",
-                              "</li>",
-                              "<li class="landmark">",
-                                "<h2>Verona</h2>",
-                                "<p style="margin-top: 2rem; margin-bottom: 3rem;">Known as the city of Romeo and Juliet, Verona is a beautiful and romantic destination. Visitors can explore the city's ancient Roman ruins, stunning architecture, and charming cafes and restaurants.</p>",
-                                "<img src="images/Verona.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem;">",
-                              "</li>",
-                            "</ol>",
-                        "</div>",
-                        "<h1 class="pageTitle">Landmarks</h1>",
-                        "<div class="landmarks">",
-                            "<ol style="font-size: 50rem;">",
-                              "<li class="landmark">",
-                                "<h2>Colosseum (Rome)</h2>",
-                                "<p style="margin-top: 2rem; margin-bottom: 3rem;">A huge amphitheater built in the 1st century AD, famous for gladiator contests and other public spectacles.</p>",
-                                "<img src="images/Rome1.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem;">",
-                              "</li>",
-                              "<li class="landmark">",
-                                "<h2>Leaning Tower of Pisa (Pisa)</h2>",
-                                "<p style="margin-top: 2rem; margin-bottom: 3rem;">A 56-meter-tall bell tower with a distinct lean due to its unstable foundation.</p>",
-                                "<img src="images/Pisa.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem;">",
-                              "</li>",
-                              "<li class="landmark">",
-                                "<h2>St. Peter's Basilica (Vatican City)</h2>",
-                                "<p style="margin-top: 2rem; margin-bottom: 3rem;">One of the largest and most beautiful churches in the world, designed by famous artists like Michelangelo and Bernini.</p>",
-                                "<img src="images/St. Peter's Basilica.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem;">",
-                              "</li>",
-                              "<li class="landmark">",
-                                "<h2>Pompeii (Campania)</h2>",
-                                "<p style="margin-top: 2rem; margin-bottom: 3rem;">An ancient Roman city preserved in ash after the eruption of Mount Vesuvius in 79 AD.</p>",
-                                "<img src="images/Pompeii.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem;">",
-                              "</li>",
-                              "<li class="landmark">",
-                                "<h2>Florence Cathedral (Florence)</h2>",
-                                "<p style="margin-top: 2rem; margin-bottom: 3rem;">A stunning Gothic cathedral with a terracotta-tiled dome designed by Filippo Brunelleschi.</p>",
-                                "<img src="images/Florence1.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem;">",
-                              "</li>",
-                            "</ol>",
-                        "</div>",
-            "",
-                "</div>",
-            "",
-                    "</div>",
-            "",
-                    "<button onclick="topFunction()" id="backToTop" class="backToTop" title="Go to top"><i class="fa-solid fa-angle-up" style="background: none;"></i></button>",
-              "</body>",
-              "<script>",
-                "let backToTop = document.getElementById("backToTop");",
-            "",
-            "window.onscroll = function() {scrollFunction()};",
-            "",
-            "function scrollFunction() {",
-              "if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {",
-                "backToTop.style.display = "block";",
-              "} else {",
-                "backToTop.style.display = "none";",
-              "}",
-            "}",
-            "",
-            "function topFunction() {",
-              "$("html, body").animate({ scrollTop: "0" });",
-            "}",
-              "</script>",
-            "</html>"
-        ]
-    },
-    "crete-context-boilerplate": {
-        "prefix": "scontext",
-        "body": [
-            "import * as React from 'react'",
+	"create-html": {
+			"prefix": "adfasdfs",
+			"body": [
+					"<!DOCTYPE html>",
+					"<html lang="en">",
+						"<head>",
+							"<meta charset="UTF-8">",
+							"<meta name="viewport" content="width=device-width, initial-scale=1.0">",
+							"<script src="https://kit.fontawesome.com/eadd39accc.js" crossorigin="anonymous"></script>",
+							"<link rel="preconnect" href="https://fonts.googleapis.com">",
+							"<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>",
+							"<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">",
+							"<link href="https://fonts.googleapis.com/css2?family=Golos+Text&display=swap" rel="stylesheet">",
+							"<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">",
+							"<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet"><meta http-equiv="X-UA-Compatible" content="ie=edge">",
+							"<script src = "https://code.jquery.com/jquery-3.5.0.js"></script>",
+							"<title>Italy</title>",
+							"<link rel="stylesheet" href="./Italy.css">",
+						"</head>",
+						"<body>",
+							"<nav class="navbar">",
+									"<ul class="navList">",
+											"<li class="navText">",
+												"<a href="index.html" class="homeButton">Home</a>",
+												"<a href="index.html" class="homeButton">About</a>",
+												"<a href="index.html" class="homeButton">Contact Us</a> ",
+											"</li>",
+									"</ul>",
+							"</nav>",
+							"<div class="main">",
+									"<div class="titleDescription">",
+											"<h1 class="pageTitle">About Italy</h1>",
+											"<div class="overview">",
+													"<p>Italy truly has something for everyone! With its stunning art, architecture, and fashion, mouth-watering food, world-renowned wine, and picturesque landscapes, this country is a must-see destination.</p>",
+												"<br>",
+														"<p>Experience the history and culture of Italy by strolling through ancient ruins, admiring breathtaking art, or exploring charming towns and cities. And when it comes to food, Italian cuisine is second to none, from classic dishes like pizza and pasta to regional specialties that will tantalize your taste buds.</p> ",
+														"<br>",
+														"<p>But Italy is not just about its cities and food. The country is home to diverse landscapes, including the rolling hills of Tuscany, the rugged coastlines of the Amalfi Coast, and the majestic peaks of the Italian Alps.</p>",
+														"<br>",
+														"<p>warm hospitality and a welcoming spirit, Italy is a place that will capture your heart and leave you wanting more. So why wait? Book your trip to Italy today and experience the magic for yourself!</p>",
+														"<img src="images/Italy_Flag.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem; margin-top: 3rem;">",
+											"</div>",
+											"<h1 class="pageTitle">Popular cities for tourists</h1>",
+											"<div class="landmarks">",
+													"<ol style="font-size: 50rem;">",
+														"<li class="landmark">",
+															"<h2>Rome</h2>",
+															"<p style="margin-top: 2rem; margin-bottom: 3rem;">Italy's capital city is a popular destination for tourists due to its rich history, stunning architecture, and world-renowned landmarks such as the Colosseum, the Vatican City, and the Trevi Fountain.</p>",
+															"<img src="images/Rome.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem;">",
+														"</li>",
+														"<li class="landmark">",
+															"<h2>Venice</h2>",
+															"<p style="margin-top: 2rem; margin-bottom: 3rem;">Known as the "City of Canals," Venice is famous for its beautiful waterways, gondolas, and stunning architecture. Tourists come to Venice to explore its numerous museums, galleries, and historic buildings.</p>",
+															"<img src="images/Venice.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem;">",
+														"</li>",
+														"<li class="landmark">",
+															"<h2>Florence</h2>",
+															"<p style="margin-top: 2rem; margin-bottom: 3rem;">This city is renowned for its art, architecture, and cultural heritage. Florence is home to some of the world's most famous art museums, including the Uffizi Gallery and the Accademia Gallery, which houses Michelangelo's David sculpture.</p>",
+															"<img src="images/Florence.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem;">",
+														"</li>",
+														"<li class="landmark">",
+															"<h2>Milan</h2>",
+															"<p style="margin-top: 2rem; margin-bottom: 3rem;">Known as the fashion capital of Italy, Milan is a popular destination for fashionistas and design enthusiasts. Visitors can explore the city's museums, galleries, and shops, as well as its iconic landmarks such as the Gothic-style Milan Cathedral.</p>",
+															"<img src="images/Milan.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem;">",
+														"</li>",
+														"<li class="landmark">",
+															"<h2>Verona</h2>",
+															"<p style="margin-top: 2rem; margin-bottom: 3rem;">Known as the city of Romeo and Juliet, Verona is a beautiful and romantic destination. Visitors can explore the city's ancient Roman ruins, stunning architecture, and charming cafes and restaurants.</p>",
+															"<img src="images/Verona.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem;">",
+														"</li>",
+													"</ol>",
+											"</div>",
+											"<h1 class="pageTitle">Landmarks</h1>",
+											"<div class="landmarks">",
+													"<ol style="font-size: 50rem;">",
+														"<li class="landmark">",
+															"<h2>Colosseum (Rome)</h2>",
+															"<p style="margin-top: 2rem; margin-bottom: 3rem;">A huge amphitheater built in the 1st century AD, famous for gladiator contests and other public spectacles.</p>",
+															"<img src="images/Rome1.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem;">",
+														"</li>",
+														"<li class="landmark">",
+															"<h2>Leaning Tower of Pisa (Pisa)</h2>",
+															"<p style="margin-top: 2rem; margin-bottom: 3rem;">A 56-meter-tall bell tower with a distinct lean due to its unstable foundation.</p>",
+															"<img src="images/Pisa.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem;">",
+														"</li>",
+														"<li class="landmark">",
+															"<h2>St. Peter's Basilica (Vatican City)</h2>",
+															"<p style="margin-top: 2rem; margin-bottom: 3rem;">One of the largest and most beautiful churches in the world, designed by famous artists like Michelangelo and Bernini.</p>",
+															"<img src="images/St. Peter's Basilica.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem;">",
+														"</li>",
+														"<li class="landmark">",
+															"<h2>Pompeii (Campania)</h2>",
+															"<p style="margin-top: 2rem; margin-bottom: 3rem;">An ancient Roman city preserved in ash after the eruption of Mount Vesuvius in 79 AD.</p>",
+															"<img src="images/Pompeii.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem;">",
+														"</li>",
+														"<li class="landmark">",
+															"<h2>Florence Cathedral (Florence)</h2>",
+															"<p style="margin-top: 2rem; margin-bottom: 3rem;">A stunning Gothic cathedral with a terracotta-tiled dome designed by Filippo Brunelleschi.</p>",
+															"<img src="images/Florence1.jpg" alt="" style="width: 70%; border: none; border-radius: 1rem;">",
+														"</li>",
+													"</ol>",
+											"</div>",
+					"",
+							"</div>",
+					"",
+									"</div>",
+					"",
+									"<button onclick="topFunction()" id="backToTop" class="backToTop" title="Go to top"><i class="fa-solid fa-angle-up" style="background: none;"></i></button>",
+						"</body>",
+						"<script>",
+							"let backToTop = document.getElementById("backToTop");",
+					"",
+					"window.onscroll = function() {scrollFunction()};",
+					"",
+					"function scrollFunction() {",
+						"if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {",
+							"backToTop.style.display = "block";",
+						"} else {",
+							"backToTop.style.display = "none";",
+						"}",
+					"}",
+					"",
+					"function topFunction() {",
+						"$("html, body").animate({ scrollTop: "0" });",
+					"}",
+						"</script>",
+					"</html>"
+			]
+	},
+	"crete-context-boilerplate": {
+			"prefix": "scontext",
+			"body": [
+					"import * as React from 'react'",
 "",
 "/**",
- "* 1. Write the name of the context Provider starting with a capital letter ",
- "* 2. Press Tab",
- "* 3. Write the name of the reducer (usually the name of the provider, but with lowercase first letter)",
- "* 4. Delete this comment",
+"* 1. Write the name of the context Provider starting with a capital letter ",
+"* 2. Press Tab",
+"* 3. Write the name of the reducer (usually the name of the provider, but with lowercase first letter)",
+"* 4. Delete this comment",
+"*/",
+					"type case1Payload = {",
+						"var1: number",
+					"}",
+					"type Action = {type: 'case1', payload: case1Payload} | {type: 'case2'}",
+					"type Dispatch = (action: Action) => void",
+					"type State = {var1: number}",
+					"type ${1:Generic}ProviderProps = {children: React.ReactNode}",
+				 " ",
+					"const ${1:Generic}StateContext = React.createContext<",
+						"{state: State; dispatch: Dispatch} | undefined",
+					">(undefined)",
+				 " ",
+					"function ${2:generic}Reducer(state: State, action: Action) {",
+						"switch (action.type) {",
+							"case 'case1': {",
+								"return {",
+									"...state,",
+									"var1: action.payload.var1",
+								"}",
+							"}",
+							"default: {",
+								"throw new Error(`Unhandled action type: ${action.type}`)",
+							"}",
+						"}",
+					"}",
+				 " ",
+				 " ",
+					"const defaultState = {",
+						"var1: 0",
+					"}",
+				 " ",
+				 " ",
+					"function ${1:Generic}Provider({children}: ${1:Generic}ProviderProps) {",
+						"const [state, dispatch] = React.useReducer(${2:generic}Reducer, defaultState)",
+						"// NOTE: you *might* need to memoize this value",
+					 " ",
+						"const value = {state, dispatch}",
+						"return (",
+							"<${1:Generic}StateContext.Provider value={value}>",
+								"{children}",
+							"</${1:Generic}StateContext.Provider>",
+						")",
+					"}",
+				 " ",
+					"function use${1:Generic}() {",
+						"const context = React.useContext(${1:Generic}StateContext)",
+						"if (context === undefined) {",
+							"throw new Error('use${1:Generic} must be used within a ${1:Generic}Provider')",
+						"}",
+						"return context",
+					"}",
+				 " ",
+					"export {${1:Generic}Provider, use${1:}}",
+			]
+	},
+	"crete-index-boilerplate": {
+			"prefix": "scontextindex",
+			"body": [
+				"import * as React from 'react'",
+"",
+"/**",
+"* 1. Write the name of the context Provider starting with a capital letter ",
+"* 2. Press Tab",
+"* 3. Write the name of the reducer (usually the name of the provider, but with lowercase first letter)",
+"* 4. Create the actions file and use the actions snippet",
+"* 5. Create the reducer file and use the reducer snippet",
+"* 6. Create the types file and use the types snippet",
+"* 7. Create the constants file and use the constants snippet",
+"* 8. Delete this comment",
+"*/",
+"",
+				"import { actions } from './actions'",
+				"import { ${2:generic}Reducer } from './reducer'",
+				"import { ${1:Generic}ProviderProps, ${1:Generic}State, ${1:Generic}Dispatch } from './types'",
+
+			"	",
+				"const ${1:Generic}StateContext = React.createContext<",
+					"| {",
+							"state: ${1:Generic}State",
+							"dispatch: ${1:Generic}Dispatch",
+							"actions: ReturnType<typeof actions>",
+						"}",
+					"| undefined",
+				">(undefined)",
+			"	",
+				"const defaultState = {",
+					"variable1: '',",
+				"} as const",
+			"	",
+				"function ${1:Generic}Provider({ children }: ${1:Generic}ProviderProps) {",
+					"const [state, dispatch] = React.useReducer(${2:generic}Reducer, defaultState)",
+			"	",
+					"const value = React.useMemo(",
+					"() => ({",
+						"state,",
+						"actions: actions(dispatch),",
+						"dispatch,",
+					"}),",
+					"[state, dispatch],",
+				")",
+		"	",
+					"return (",
+						"<${1:Generic}StateContext.Provider value={value}>{children}</${1:Generic}StateContext.Provider>",
+					")",
+				"}",
+			"	",
+				"function use${1:Generic}() {",
+					"const context = React.useContext(${1:Generic}StateContext)",
+					"if (context === undefined) {",
+						"throw new Error('use${1:Generic} must be used within a ${1:Generic}Provider')",
+					"}",
+					"return context",
+				"}",
+			"	",
+				"export { ${1:Generic}Provider, use${1:Generic} }",
+			]
+	},
+	"crete-action-boilerplate": {
+			"prefix": "scontextaction",
+			"body": [
+				"import { ${1:Generic}Dispatch } from './types'",
+				"import { ACTION_1_CONSTANT} from './constants'",
+			"	",
+				"export const actions = (",
+					"dispatch: ${1:Generic}Dispatch,",
+				") => ({",
+					"action1: () =>",
+						"dispatch({ type: ACTION_1_CONSTANT, payload: '' }),",
+				"})",
+			"	",
+			]
+	},
+	"crete-constant-boilerplate": {
+		"prefix": "scontextconstant",
+		"body": [
+			"export const ACTION_1_CONSTANT = 'action_1_constant'",
+		]
+	},
+	"crete-reducer-boilerplate": {
+		"prefix": "scontextreducer",
+		"body": [
+			"import { ${1:Generic}Action, ${1:Generic}State } from './types'",
+			"import { ACTION_1_CONSTANT } from './constants'",
+		"	",
+"/**",
+ "* 1. Name with capital",
+ "* 2. Tab",
+ "* 3. Name with lowercase",
  "*/",
-            "type case1Payload = {",
-              "var1: number",
-            "}",
-            "type Action = {type: 'case1', payload: case1Payload} | {type: 'case2'}",
-            "type Dispatch = (action: Action) => void",
-            "type State = {var1: number}",
-            "type ${1:Generic}ProviderProps = {children: React.ReactNode}",
-           " ",
-            "const ${1:Generic}StateContext = React.createContext<",
-              "{state: State; dispatch: Dispatch} | undefined",
-            ">(undefined)",
-           " ",
-            "function ${2:generic}Reducer(state: State, action: Action) {",
-              "switch (action.type) {",
-                "case 'case1': {",
-                  "return {",
-                    "...state,",
-                    "var1: action.payload.var1",
-                  "}",
-                "}",
-                "default: {",
-                  "throw new Error(`Unhandled action type: ${action.type}`)",
-                "}",
-              "}",
-            "}",
-           " ",
-           " ",
-            "const defaultState = {",
-              "var1: 0",
-            "}",
-           " ",
-           " ",
-            "function ${1:Generic}Provider({children}: ${1:Generic}ProviderProps) {",
-              "const [state, dispatch] = React.useReducer(${2:generic}Reducer, defaultState)",
-              "// NOTE: you *might* need to memoize this value",
-             " ",
-              "const value = {state, dispatch}",
-              "return (",
-                "<${1:Generic}StateContext.Provider value={value}>",
-                  "{children}",
-                "</${1:Generic}StateContext.Provider>",
-              ")",
-            "}",
-           " ",
-            "function use${1:Generic}() {",
-              "const context = React.useContext(${1:Generic}StateContext)",
-              "if (context === undefined) {",
-                "throw new Error('use${1:Generic} must be used within a ${1:Generic}Provider')",
-              "}",
-              "return context",
-            "}",
-           " ",
-            "export {${1:Generic}Provider, use${1:}}",
-        ]
-    },
+" ",
+			"export function ${2:generic}Reducer(",
+				"state: ${1:Generic}State,",
+				"{ type, payload }: ${1:Generic}Action,",
+			"): ${1:Generic}State {",
+				"switch (type) {",
+					"case ACTION_1_CONSTANT: {",
+						"return {",
+							"...state,",
+							"variable1: payload,",
+						"}",
+					"}",
+					"default: {",
+						"throw new Error(`Unhandled type: ${type}`)",
+					"}",
+				"}",
+			"}",
+		]
+	},
+	"crete-reducer-boilerplate": {
+		"prefix": "scontexttypes",
+		"body": [
+			"import { ACTION_1_CONSTANT } from './constants'",
+"",
+			"export type Variable1Type = string",
+		"	",
+			"export type ${1:Generic}State = {",
+				"variable1: Variable1Type",
+			"}",
+		"	",
+			"// The is union of all possible actions",
+			"export type ${1:Generic}Action = { type: typeof ACTION_1_CONSTANT; payload: string }",
+		"	",
+			"export type ${1:Generic}Dispatch = (action: ${1:Generic}Action) => void",
+		]
+	},
 }
